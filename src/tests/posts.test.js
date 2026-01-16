@@ -35,7 +35,7 @@ describe('Posts API', () => {
 
         // valida status e se veio um _id gerado pelo Mongo
         // expect(response.status).toBe(201);
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(201);
         expect(response.body).toHaveProperty('_id');
     });
 
