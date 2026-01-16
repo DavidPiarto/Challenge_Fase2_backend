@@ -1,0 +1,176 @@
+{
+    "info": {
+        "name": "Tech Challenge - Blog API",
+        "_postman_id": "d9f1c2a4-7a3b-4f9d-b9e7-123456789abc",
+        "description": "Coleção de testes para a API de Blogging do Tech Challenge (FIAP)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Home",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        ""
+                    ]
+                }
+            }
+        },
+        {
+            "name": "About",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/about",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "about"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Listar Posts",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/posts",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "posts"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Buscar Posts",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/posts/search?q=post",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "posts",
+                        "search"
+                    ],
+                    "query": [
+                        {
+                            "key": "q",
+                            "value": "post"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Buscar Post por ID",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/posts/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "posts",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Criar Post",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"title\": \"Meu primeiro post\",\n  \"content\": \"Conteúdo do post\",\n  \"author\": \"Professor João\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/posts",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "posts"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Atualizar Post",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"title\": \"Título atualizado\",\n  \"content\": \"Conteúdo atualizado\",\n  \"author\": \"Professor João\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/posts/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "posts",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Excluir Post",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3000/posts/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "posts",
+                        "1"
+                    ]
+                }
+            }
+        }
+    ]
+}
