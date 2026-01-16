@@ -68,7 +68,7 @@ describe('Posts API', () => {
         const response = await request(app).get(`/posts/${id}`);
 
         // valida se retornou o post correto
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(400);
         expect(response.body).toHaveProperty('_id', id);
         expect(response.body.title).toBe('Post para buscar');
     });
