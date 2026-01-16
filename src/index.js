@@ -12,7 +12,7 @@ const PORT = 3000;
 
 // MIDDLEWARES
 app.use((req, res, next) => {
-    console.log(`${req.method} ${req.url}`);
+    console.log(`Método: ${req.method} - URL: ${req.url}`);
     next();
 });
 
