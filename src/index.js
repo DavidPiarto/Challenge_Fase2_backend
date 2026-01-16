@@ -34,7 +34,7 @@ app.get('/posts', async (req, res) => {
     }
 });
 
-// GET /posts/search?q=termo
+// GET /posts/search?q='termo'
 app.get('/posts/search', async (req, res) => {
     try {
         const { q } = req.query;
