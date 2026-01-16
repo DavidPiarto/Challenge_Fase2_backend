@@ -1,4 +1,4 @@
-name: CI - Tests and Coverage
+name: CI - Tests, Coverage and Docker Build
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 18
           cache: npm
 
       - name: Instalar dependências
@@ -45,4 +45,17 @@ jobs:
           exit 1
 
       - name: Rodar testes com coverage
+        env:
+          MONGO_URI_TEST: mongodb://localhost:27017/blogdb_test
         run: npm run test:coverage
+
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: tests
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Build da imagem Docker
+        run: docker build -t challenge-backend:ci .
